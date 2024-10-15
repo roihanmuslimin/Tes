@@ -1,97 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Tes | Media </title>
-    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
-  <body>
-    <script type="text/javascript" charset="utf-8">
-      console.log("Hello World")
-      alert(" Max Lebar Device 1249Px/Pixel ")
+<head>
+    <title>Formulir Pendaftaran</title>
+</head>
+<body>
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <button type="button" onclick="tambahData()">Kirim</button>
+    </form>
+
+    <table id="tabelData">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>UID</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function tambahData() {
+            // Ambil nilai username dari input
+            var username = document.getElementById("username").value;
+
+            // Generate UID unik (contoh sederhana menggunakan timestamp)
+            var uid = Date.now();
+
+            // Buat elemen tabel baru
+            var row = document.createElement("tr");
+            var cell1 = document.createElement("td");
+            var cell2 = document.createElement("td");
+
+            // Isi data ke dalam elemen tabel
+            cell1.textContent = username;
+            cell2.textContent = uid;
+
+            // Tambahkan baris baru ke tabel
+            row.appendChild(cell1);
+            row.appendChild(cell2);
+            document.getElementById("tabelData").appendChild(row);
+
+            // Kosongkan input username
+            document.getElementById("username").value = "";
+        }
     </script>
-    <div class="header">
-      <div class="gambar">
-        <img
-        src="https://raw.githubusercontent.com/Source-RoihanMuslimin/Tes-/main/giphy.gif"
-        alt="lah?" />
-      </div>
-      <h1>Test</h1>
-      <nav>
-        <ul>
-          <li><a href="javascript:setTimeout(()=>{window.location =
-          'mailto:consolewarn@protonmail. com?subject=feedback' },600);">Email</a></li>
-          <li><a href="javascript:setTimeout(()=>{window.location = '#Lorem' },600);">Lorem</a></li>
-        </ul>
-      </nav>
-    </div>
-
-    <div class="container">
-      <p>Amet eu proident qui cupidatat. Eu cillum consequat adipisicing nisi nisi cupidatat nulla est deserunt nisi sint esse. Quis do sunt ea eu magna anim deserunt laboris in. Commodo ut aliquip culpa commodo fugiat cupidatat aute laboris est ex minim aliquip do ex.
-Qui et do qui tempor laboris quis consectetur velit pariatur excepteur excepteur ut occaecat irure. Incididunt ullamco sunt aliquip occaecat sunt incididunt velit est proident tempor aute aute ut ex. Consectetur occaecat dolor veniam tempor dolor sint nulla cillum elit nulla aliquip in. Fugiat pariatur officia tempor duis dolor enim commodo occaecat elit ipsum.
-Mollit in consectetur exercitation labore eiusmod aliquip ullamco ipsum proident nisi officia laborum in. Sunt amet tempor eu exercitation irure velit aute ullamco esse. Exercitation laborum incididunt cillum occaecat. Cillum non cupidatat in et proident aliqua irure eiusmod.
-Ullamco non duis ea minim incididunt proident laborum veniam esse culpa adipisicing est. Ad cillum ipsum ipsum amet. Mollit aliquip enim duis enim. Cupidatat voluptate tempor veniam ad enim ipsum reprehenderit elit aliqua labore consequat. Dolore cillum proident proident sit labore esse consectetur ipsum nulla adipisicing labore anim. Sint velit commodo sint ullamco elit proident ipsum aute fugiat quis.</p>
-
-      <div class="gtau">
-        <img class="harith"
-        src="https://raw.githubusercontent.com/Source-RoihanMuslimin/Tes-/main/1bab4fe88a94b3f20afe5f87fb642453.jpg"
-        alt="data lhu bang none" />
-        <table border="1" cellspacing="0" cellpadding="5">
-          <tr>
-            <td colspan="2" class="tabung" id="warna"><i>No Description</i></td>
-          </tr>
-
-          <tr>
-            <td><b>None</b></td>
-            <td>None</td>
-          </tr>
-
-          <tr>
-            <td><b>None</b></td>
-            <td>None</td>
-          </tr>
-
-          <tr>
-            <td colspan="2" class="tabung" id="warna"><i>information skills</i></td>
-          </tr>
-
-          <tr>
-            <td rowspan="4"><b>Language</b></td>
-          </tr>
-
-          <tr>
-            <td>Html</td>
-          </tr>
-
-          <tr>
-            <td>Css - Learning</td>
-          </tr>
-
-          <tr>
-            <td>Javascript - Learning</td>
-          </tr>
-
-        </table>
-        <hr>
-        <div class="Bungkus">
-        <h2>Sosial Media</h2>
-        <img src="https://img.icons8.com/ios-glyphs/192/null/github.png"
-        class="gt" alt="Github" id="g" /><a class="iya"
-        href="javascript:setTimeout(()=>{window.location =
-        'https://github.com/Ranid-none' },600);">Github</a>
-        <img src="https://img.icons8.com/ios-glyphs/192/null/whatsapp.png" alt="Whatsapp" class="gt w" id="w" /><a class="iya" href="javascript:setTimeout(()=>{window.location = 'https://api.whatsapp.com/send/?phone=6281259833743' },600);">Whatsapp</a>
-        <img
-        src="https://img.icons8.com/material-sharp/192/null/facebook-new.png"
-        alt="Facebook" class="gt f" id="f"/><a class="iya"
-        href="javascript:setTimeout(()=>{window.location =
-        'https://www.facebook.com/profile.php?id=' },600);">Facebook</a>
-        </div>
-      </div>
-    </div>
-    <!--Footer-->
-    <footer id="Lorem">
-    <marquee>&copy;github.com/ranid-none</marquee>
-    </footer>
-  </body>
+</body>
 </html>
