@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Pendaftaran dengan UID Unik</title>
+</head>
+<body>
+    <h1>Formulir Pendaftaran</h1>
+
+    <form>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <button type="button" onclick="tambahData()">Kirim</button>
+    </form>
+
+    <table id="tabelData">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>UID</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function generateRandomString(length) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let result = '';
+            for (let i = 0; i < length; i++) {
+                const randomIndex = Math.floor(Math.random() * characters.length);
+                result += characters.charAt(randomIndex);
+            }
+            return result;
+        }
+
+        function tambahData() {
+            const usernameInput = document.getElementById('username');
+            const username = usernameInput.value;
+            const uid = generateRandomString(10);
+
+            const tableBody = document.getElementById('tabelData').getElementsByTagName('tbody')[0];
+            const newRow = tableBody.insertRow();
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+
+            cell1.textContent = username;
+            cell2.textContent = uid;
+
+            usernameInput.value = '';
+        }
+    </script>
+</body>
+</html>
+  
